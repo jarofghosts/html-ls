@@ -51,8 +51,13 @@ function ls_html(dir, options) {
     }
 
     function done() {
-      var entities = dirs.concat(files)
-      if(!options.dirsFirst) entities.sort()
+      var entities
+
+      if(options.dirsFirst) {
+        entities = dirs.sort().concat(files.sort())
+      } else {
+        entities = (dirs.concat(files)).sort()
+      }
 
       for(var i = 0, l = entities.length; i < l; ++i) {
         stream_item(entities[i])
