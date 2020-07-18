@@ -8,9 +8,9 @@ pretty print directory list in html
 ## usage
 
 ```js
-var htmlls = require('html-ls')
+var htmlls = require("html-ls")
 
-htmlls('/var/www').pipe(process.stdout)
+htmlls("/var/www").pipe(process.stdout)
 ```
 
 ## options
@@ -25,6 +25,8 @@ like this (with defaults noted):
   , dirsFirst: false // put dirs at the top of the list, then files
   , parentTag: 'ul' // opening tag for list
   , childTag: 'li' // child element tag
+  , transformHref: str => str // function to transform href values
+  , transformLinkText: str => str // function to transform link text
 }
 ```
 
